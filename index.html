@@ -13,16 +13,28 @@
 
 <body>
   <div id="container">
+    <div id="container-content">
+      <h1>Clique No Botão Para Se Escanear</h1>
     <div class="typed-cursor typed-cursor--blink"></div>
-    <code class="center">
+    <code class="code">
       <div class="code-content">
-        <span id="demo"></span>
-        <span id="img"></span>
+        <section id="section">
+
+        </section>
+
+          <span id="demo"></span>
+       
+        <span class="img">
+          <img src="empty.svg" id="img" alt="src">
+        </span>
       </div>
     </code>
     <div class="center">
-      <button id="myButton" class="myBtn3"></button>
+      <button id="myButton" class="myBtn">
+        Clique Aqui
+      </button>
     </div>
+  </div>
   </div>
 
   <script>
@@ -37,13 +49,11 @@
           typeWriter()
           isPlaying = true;
           src = 'mia-khalifa-quem-e.webp'
-          img = document.createElement('img')
-          img.src = src
-          $('#img').empty().append(img); // Replace existing image
+          img= $('#img').attr('src',src)
           $(this).addClass('scale');
-          audio = new Audio('2.mp3');
+          $('#section').addClass('active');
+          audio = new Audio('');
           audio.play();
-
           audio.onended = function () {
             isPlaying = false;
             $('#myButton').removeClass('scale');
@@ -52,31 +62,47 @@
           isPlaying = false;
           audio.pause();
           removeWriter()
-          $('#img').empty(); // Remove the existing image
+          img= $('#img').attr('src','empty.svg')
           $(this).addClass('scale');
           $('#myButton').removeClass('scale');
+          $('#section').removeClass('active');
         }
       });
     });
     var i = 0;
+    var j = 0;
+    var nome = 'Nome Detectado: ';
     var txt = 'Mia Khalifa Detectada';
-    var speed = 50; /* The speed/duration of the effect in milliseconds */
-
+    var speed = 50;
+    var isNameComplete = false;
+  
     function typeWriter() {
-      if (i < txt.length) {
-        document.getElementById("demo").innerHTML += txt.charAt(i);
-        i++;
+      if (!isNameComplete && i < nome.length) {
+        $("#section").append(nome.charAt(i));
         setTimeout(typeWriter, speed);
+        i++;
+      } else if (!isNameComplete) {
+        isNameComplete = true;
+        i = 0;
+        setTimeout(typeWriter, speed);
+      } else if (isNameComplete && j < txt.length) {
+        $("#demo").append(txt.charAt(j));
+        setTimeout(typeWriter, speed);
+        j++;
+      } else {
+        setTimeout(removeWriter, speed * 2);
       }
     }
+  
     function removeWriter() {
-      if (i >= 0) {
-        document.getElementById("demo").innerHTML = txt.substring(0, i);
+      if (i >= 0 && j >= 0) {
+        $("#demo").html(txt.substring(0, j));
+        $("#section").html(nome.substring(0, i));
         i--;
+        j--;
         setTimeout(removeWriter, speed);
-      }
+      } 
     }
-
   </script>
 </body>
 
