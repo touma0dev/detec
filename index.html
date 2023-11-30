@@ -80,16 +80,16 @@
       if (!isNameComplete && i < nome.length) {
         $("#section").append(nome.charAt(i));
         setTimeout(typeWriter, speed);
+        
         i++;
       } else if (!isNameComplete) {
         isNameComplete = true;
+        i=0;
         setTimeout(typeWriter, speed);
       } else if (isNameComplete && j < txt.length) {
         $("#demo").append(txt.charAt(j));
         setTimeout(typeWriter, speed);
         j++;
-      } else {
-        setTimeout(removeWriter, speed * 2);
       }
     }
   
