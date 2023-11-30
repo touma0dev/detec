@@ -1,0 +1,49 @@
+*{
+        scrollbar-color: #666 #201c29;
+    color: #fff;
+    font-size: 16px;
+
+}
+body,header,main{
+    background: #1b1b1b;
+
+  }
+  #container{
+    max-width: 930px ;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    margin: 0 auto;
+  }
+  .center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .center  img{
+    align-content: center;
+    justify-content: center;
+    max-width: 30%;
+    border-radius: 5pt;
+    margin: 0 auto;
+    display: inline;
+    min-height: 30%;
+  }
+  .code-content{
+    gap: 5pt 5pt;
+  }
+  .code-content #demo{
+    max-width: 89%;
+  align-content: center;
+  margin: 0 auto;
+}
+  .code-content span{
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+  }
+  .code-content #demo{
+    font-size: 86%;
+  }

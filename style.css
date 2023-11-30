@@ -1,0 +1,145 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+  }
+ 
+  .myBtn{
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 30px;
+    display: inline-block;
+    border-top: 3px solid #8CD5B5;
+    border-left: 3px solid #8CD5B5;
+    border-bottom: 3px solid #034126;
+    border-right: 3px solid #034126;
+    border-radius: 10px;
+    padding: 10px 40px;
+    color: #1e4735;
+    text-shadow: -1px -1px 0px #000;
+    background: linear-gradient(to bottom,#07A962,#046239);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5), inset 0px 5px 5px rgba(255,255,255,.7), inset 0px -5px 5px rgba(0,0,0,.2);
+  }
+  /*
+  .myBtn:hover{
+    background: linear-gradient(to top,#07A962,#046239);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5), inset 0px 5px 5px rgba(0,0,0,.2), inset 0px -5px 5px rgba(255,255,255,.7);
+  }
+  */
+  .myBtn2{
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 30px;
+    display: inline-block;
+    border-top: 3px solid #8CD5B5;
+    border-left: 3px solid #8CD5B5;
+    border-bottom: 3px solid #034126;
+    border-right: 3px solid #034126;
+    border-radius: 50%;
+    padding: 50px;
+    color: #1e4735;
+    text-shadow: -1px -1px 0px #000;
+    background: radial-gradient(at 30% 15%,#24D387,#085F39);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5),inset 1px 4px 5px rgba(255,255,255,.7), inset -1px -4px 5px rgba(0,0,0,.2);
+    position: relative;
+  }
+  .myBtn2::before{
+    content:"";
+    display: block;
+    width: 20%;
+    height: 10%;
+    background-color: #fefefe;
+    position: absolute;
+    border-radius: 50%;
+    left: 30%;
+    top: 15%;
+    box-shadow: 0 0 8px rgba(255,255,255,.7);
+    transform:skew(-45deg);
+  }
+  .myBtn3{
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 30px;
+    display: inline-block;
+    border-top: 3px solid #8CD5B5;
+    border-left: 3px solid #8CD5B5;
+    border-bottom: 3px solid #034126;
+    border-right: 3px solid #034126;
+    border-radius: 50%;
+    padding: 50px;
+    color: #1e4735;
+    text-shadow: -1px -1px 0px #000;
+    background: radial-gradient(at center,#24D387,#085F39);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5),inset 1px 4px 5px rgba(255,255,255,.7), inset -1px -4px 5px rgba(0,0,0,.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .myBtn3::before{
+    content:"";
+    display: block;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom,rgba(255,255,255,.7),transparent);
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+  }
+  .btn4-wrapper{
+    margin: 20px;
+  }
+  div.myBtn4{
+    padding: 10px;
+    font-family: Arial;
+    font-size: 30px;
+    background: linear-gradient(to bottom,#D0D1D3,#A0A2A3);
+    display: inline-block;
+    border-radius: 8px;
+    border-top: 2px solid #E0E2E4;
+    border-left
+    : 2px solid #E0E2E4;
+    border-right: 2px solid #7B7C7D;
+    border-bottom: 2px solid #7B7C7D;
+    box-shadow: 0 4px 5px rgba(0,0,0,.7);
+  }
+  div.myBtn4 a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 28px 40px 20px 40px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom,#93BBE5,#336392);
+    color: #dedede;
+    position: relative;
+  }
+  div.myBtn4 a::before{
+    content:"";
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 30%;
+    background-color: #ffffff;
+    border-radius: 50%;
+    left: 50%;
+    transform:translateX(-50%);
+    top: 4px;
+    opacity: .3;
+  }
+  
+  
+.myBtn3{
+  cursor: pointer;
+}
+  .scale{
+    transform: scale(0.9);
+    transition: all ease 0.1s;
+  }
+
+  

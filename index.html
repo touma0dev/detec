@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./app.css">
+</head>
+<style>
+</style>
+
+<body>
+  <div id="container">
+    <div class="typed-cursor typed-cursor--blink"></div>
+    <code class="center">
+      <div class="code-content">
+        <span id="demo"></span>
+        <span id="img"></span>
+      </div>
+    </code>
+    <div class="center">
+      <button id="myButton" class="myBtn3"></button>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+
+      var isPlaying = false;
+      var audio;
+      var img;
+      var src;
+      $('#myButton').on('click', function () {
+        if (!isPlaying) {
+          typeWriter()
+          isPlaying = true;
+          src = 'mia-khalifa-quem-e.webp'
+          img = document.createElement('img')
+          img.src = src
+          $('#img').empty().append(img); // Replace existing image
+          $(this).addClass('scale');
+          audio = new Audio('2.mp3');
+          audio.play();
+
+          audio.onended = function () {
+            isPlaying = false;
+            $('#myButton').removeClass('scale');
+          };
+        } else {
+          isPlaying = false;
+          audio.pause();
+          removeWriter()
+          $('#img').empty(); // Remove the existing image
+          $(this).addClass('scale');
+          $('#myButton').removeClass('scale');
+        }
+      });
+    });
+    var i = 0;
+    var txt = 'Mia Khalifa Detectada';
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    function removeWriter() {
+      if (i >= 0) {
+        document.getElementById("demo").innerHTML = txt.substring(0, i);
+        i--;
+        setTimeout(removeWriter, speed);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
