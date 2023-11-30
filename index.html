@@ -52,7 +52,7 @@
           img= $('#img').attr('src',src)
           $(this).addClass('scale');
           $('#section').addClass('active');
-          audio = new Audio('');
+          audio = new Audio('2.mp3');
           audio.play();
           audio.onended = function () {
             isPlaying = false;
@@ -83,7 +83,6 @@
         i++;
       } else if (!isNameComplete) {
         isNameComplete = true;
-        i = 0;
         setTimeout(typeWriter, speed);
       } else if (isNameComplete && j < txt.length) {
         $("#demo").append(txt.charAt(j));
